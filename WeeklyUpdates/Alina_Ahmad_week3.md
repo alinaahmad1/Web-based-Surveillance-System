@@ -1,7 +1,7 @@
 
 ## Weekly Individual Project Update Report
 ### Group number: L1-G5
-### Student name: Alina, Raiyan, Tochi
+### Student name: Alina Ahmad
 ### Week: 3 (Jan 24, 2022 - Jan 28, 2022)
 ___
 1. **How many hours did you spend on the project this week? 
