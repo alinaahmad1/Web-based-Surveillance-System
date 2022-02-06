@@ -1,3 +1,3 @@
-def funtion_C():
+def function_C():
     print("Tochukwu Iroakazi")
     
