@@ -1,5 +1,5 @@
 from TA import *
-from BC import *
+from CD import *
 
 function_TA()
 function_BC()
