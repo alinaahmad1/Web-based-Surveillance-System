@@ -1,5 +1,3 @@
-from TA import *
-from BC import *
-
-function_TA()
-function_BC()
+def function_TA():
+  print("TA")
+  
