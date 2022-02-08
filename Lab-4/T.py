@@ -1,2 +1,2 @@
 def function_T():
-  print(“Group:5”)
+  print("Group:5")

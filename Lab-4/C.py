@@ -1,2 +1,2 @@
 def function_C():
-  print(“Tochukwu Iroakazi”)
+  print("Tochukwu Iroakazi")
