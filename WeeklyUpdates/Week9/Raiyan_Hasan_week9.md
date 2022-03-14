@@ -18,7 +18,7 @@ Week: March 7th - March 13th
 
       The design report was completed 
 
-  Got an idea of how to connect the hardware that we ordered
+      Got an idea of how to connect the hardware that we ordered
 
       Did testing on our communication protocols.
 
