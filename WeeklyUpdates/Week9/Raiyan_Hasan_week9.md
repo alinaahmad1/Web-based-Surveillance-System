@@ -1,9 +1,15 @@
 Weekly Individual Project Update Report
+
 Group number: 5
+
 Student name: Raiyan Hasan
+
 Week: March 7th - March 13th
+
 How many hours did you spend on the project this week? (0-10)
+
 I spent about 8 hours on the lab
+
 Give rough breakdown of hours spent on 1-3 of the following:* (meetings, information gathering, design, research, brainstorming, evaluating options, prototyping options, writing/documenting, refactoring, testing, software implementation, hardware implementation)
 
 We did some research and testing with the communication protocols concerning our project and finished working on the design report.
