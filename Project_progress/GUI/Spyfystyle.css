@@ -12,8 +12,9 @@ html, body{
 	border: 3px solid black;
 	text-align: center;
 	background-color:rgb(222,193,155);
-	font-weight: 900;
-	padding: 15px;
+	font-weight: bold;
+	font-size: 30px;
+	padding: 25px;
 	top: 0px;
 	bottom: 0px;
 	left: 0px;
@@ -39,13 +40,14 @@ html, body{
 	border-radius: 4px;
 	text-align: center;
 	cursor: pointer;
-	padding: 10px 30px;
+	padding: 20px 50px;
 	font-size: 16px;
 	transition: 0.3s;
 	color: black;
 	font-weight: bold;
+	font-size: 20px;
 	display: block;
-	margin: 9vw auto;
+	margin: 6vw auto;
 	background-color: rgb(222,193,155);
 }
 .button:hover{
