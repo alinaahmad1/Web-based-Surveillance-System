@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel = "stylesheet" type="text/css" href="Spyfystyle.css">
+	<title>Image tab</title>
+</head>
+<body>
+	<div id="header">
+		SPYFY Surviellance System Images
+	</div>
+	<style>
+		.myimg{
+			width: 500px;
+			height: 500px;
+			display: block;
+			margin: 10%;
+		}
+	</style>
+	
+	<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"> </script>
+	<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"> </script>
+	<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"> </script>
+	<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-storage.js"> </script>
+	<script>
+	  const firebaseConfig = {
+	    apiKey: "AIzaSyCyiNvOKoInu1DCh_YA8oySZXjaYujbY3A",
+	    authDomain: "sysc-3010-project-33dda.firebaseapp.com",
+	    databaseURL: "https://sysc-3010-project-33dda-default-rtdb.firebaseio.com",
+	    projectId: "sysc-3010-project-33dda",
+	    storageBucket: "sysc-3010-project-33dda.appspot.com",
+	    messagingSenderId: "965199893823",
+	    appId: "1:965199893823:web:bb93f5253943f83b5a2f8a",
+	    measurementId: "G-K9EXWNHKQD"
+	  };
+
+	  // Initialize Firebase
+	  firebase.initializeApp(firebaseConfig);
+
+	  var rootref = firebase.database().ref().child("Images");
+
+	  rootref.on("child_added", snap => {
+	  	var image = snap.child("img").val();
+
+	  	var img = document.createElement("img");
+	  	img.src = image;
+	  	img.setAttribute("class", "myimg");
+	  	document.body.appendChild(img);
+	  });
+	</script>
+
+
+</body>
+</html>
