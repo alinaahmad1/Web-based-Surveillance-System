@@ -50,6 +50,9 @@ html, body{
 	margin: 6vw auto;
 	background-color: rgb(222,193,155);
 }
+a{
+	text-decoration: none;
+}
 .button:hover{
 	background-color: brown;
 	color: white;
