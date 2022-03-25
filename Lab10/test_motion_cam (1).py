@@ -24,3 +24,4 @@ while True:
         print("No motion detected so far")
         current_state = GPIO.input(sensor)
 #camera.close()     
+print('Test Passed')
