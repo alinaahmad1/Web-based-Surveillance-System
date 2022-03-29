@@ -3,11 +3,13 @@
 # http://picamera.readthedocs.io/en/latest/recipes2.html#web-streaming
 
 import io
+import os
 import picamera
 import logging
 import socketserver
 from threading import Condition
 from http import server
+from http.server import BaseHTTPRequestHandler, HTTPServer
 
 PAGE="""\
 <!DOCTYPE html>
@@ -19,13 +21,21 @@ PAGE="""\
 <center><h1>SPYFY Live Feed</h1></center>
 <center><img src="stream.mjpg" width="640" height="480"></center>
 
-<input type="button" value="Go back" onclick="history.back()" id="btn">
+<input type="button" value="Go back" onclick="history.back()" class="btn">
+<p>Turn SOS:
+<a href="/on"><button class="btn">On</button></a>     <a href="/off"><button class="btn">Off</button></a>
+</p>
+
+
 <style>
 *{
     background-color:rgb(217,217,217);
     font-family: "Helvetica Neue", Helvetica;
 }
-#btn{
+a{
+    text-decoration: None;
+}
+.btn{
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -34,12 +44,12 @@ PAGE="""\
     display:block;
     background-color: rgb(222, 193, 155);
 }
-#btn:hover{
+.btn:hover{
     background-color: brown;
     color: white;
     opacity: 1;
 }
-#btn:active{
+.btn:active{
     background-color: grey;
 }
 </style>
@@ -66,6 +76,20 @@ class StreamingOutput(object):
         return self.buffer.write(buf)
 
 class StreamingHandler(server.BaseHTTPRequestHandler):
+    def do_HEAD(self):
+        """ do_HEAD() can be tested use curl command 
+            'curl -I http://server-ip-address:port' 
+        """
+        self.send_response(200)
+        self.send_header('Content-type', 'index/html')
+        self.end_headers()
+        
+    def _redirect(self, path):
+        self.send_response(303)
+        self.send_header('Content-type', 'index/html')
+        self.send_header('Location', path)
+        self.end_headers()
+        
     def do_GET(self):
         if self.path == '/':
             self.send_response(301)
@@ -100,9 +124,20 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
                 logging.warning(
                     'Removed streaming client %s: %s',
                     self.client_address, str(e))
+        elif self.path=='/on':
+            #GPIO.output(18, GPIO.HIGH)
+            status='SOS is On'
+            
+            print('on')
+        elif self.path=='/off':
+            #GPIO.output(18, GPIO.LOW)
+            status='SOS is Off'
+            print('off')
+            
         else:
             self.send_error(404)
             self.end_headers()
+        self._redirect('/')
 
 class StreamingServer(socketserver.ThreadingMixIn, server.HTTPServer):
     allow_reuse_address = True
