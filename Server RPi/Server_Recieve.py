@@ -89,4 +89,3 @@ while True:
   session.quit()
   print("Email sent")
   
-  print("Test has passed")
