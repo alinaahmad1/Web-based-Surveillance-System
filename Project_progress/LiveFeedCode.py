@@ -2,6 +2,7 @@
 # Source code from the official PiCamera package
 # http://picamera.readthedocs.io/en/latest/recipes2.html#web-streaming
 
+import RPi.GPIO as GPIO
 import io
 import os
 import picamera
@@ -21,10 +22,13 @@ PAGE="""\
 <center><h1>SPYFY Live Feed</h1></center>
 <center><img src="stream.mjpg" width="640" height="480"></center>
 
+
 <input type="button" value="Go back" onclick="history.back()" class="btn">
-<p>Turn SOS:
-<a href="/on"><button class="btn">On</button></a>     <a href="/off"><button class="btn">Off</button></a>
-</p>
+<h2> Turn SOS: </h2>
+<div>
+<a href="/on"><button class="btn" id="onbtn" >On</button></a>
+<a href="/off"><button class="btn" id="offbtn">Off</button></a>
+</div>
 
 
 <style>
@@ -52,7 +56,15 @@ a{
 .btn:active{
     background-color: grey;
 }
+#onbtn, #offbtn{
+    display: inline;
+}
+input{
+    float: right;
+}
 </style>
+
+
 
 </body>
 </html>
@@ -98,7 +110,6 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
         elif self.path == '/index.html':
             content = PAGE.encode('utf-8')
             self.send_response(200)
-            self.send_header('Content-Type', 'text/html')
             self.send_header('Content-Length', len(content))
             self.end_headers()
             self.wfile.write(content)
