@@ -5,7 +5,7 @@
 						SpyFy: Web-based Surveillance Camera
 						
 		Our team consists of three members: 
-							**Group L1-G5**
+							Group L1-G5
 							Tochukwu Iroakazi, 101157104
 							Alina Ahmad, 101111867
 							Raiyan Hasan, 101125753
