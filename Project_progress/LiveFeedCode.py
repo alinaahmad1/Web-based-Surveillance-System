@@ -5,13 +5,29 @@
 import RPi.GPIO as GPIO
 import io
 import os
-import picamera
+#import picamera
 import logging
 import socketserver
 from threading import Condition
 from http import server
 from http.server import BaseHTTPRequestHandler, HTTPServer
+import time
+from sense_hat import SenseHat
 
+# GPIO setup
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+GPIO.setup(18,GPIO.OUT)
+
+pin = GPIO.PWM(18,1000)
+sense = SenseHat()
+#pin.start(4)
+
+#GPIO.output(18, True)
+#time.sleep(5)
+#print('led on')
+        
+        
 PAGE="""\
 <!DOCTYPE html>
 <html>
@@ -136,12 +152,16 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
                     'Removed streaming client %s: %s',
                     self.client_address, str(e))
         elif self.path=='/on':
+            
+            pin.start(18)
             #GPIO.output(18, GPIO.HIGH)
             status='SOS is On'
+            sense.show_message("SOS is on", text_colour=(255,255,255), back_colour=(255, 0, 0))
             
             print('on')
         elif self.path=='/off':
             #GPIO.output(18, GPIO.LOW)
+            pin.stop()
             status='SOS is Off'
             print('off')
             
@@ -149,19 +169,6 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
             self.send_error(404)
             self.end_headers()
         self._redirect('/')
+        
+output = StreamingOutput() #had to leave this here to aviod an "output" error
 
-class StreamingServer(socketserver.ThreadingMixIn, server.HTTPServer):
-    allow_reuse_address = True
-    daemon_threads = True
-
-with picamera.PiCamera(resolution='640x480', framerate=24) as camera:
-    output = StreamingOutput()
-    #Uncomment the next line to change your Pi's Camera rotation (in degrees)
-    #camera.rotation = 90
-    camera.start_recording(output, format='mjpeg')
-    try:
-        address = ('', 8000)
-        server = StreamingServer(address, StreamingHandler)
-        server.serve_forever()
-    finally:
-        camera.stop_recording()
