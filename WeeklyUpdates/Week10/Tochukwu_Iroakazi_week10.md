@@ -1,6 +1,6 @@
 ## Weekly Individual Project Update Report
 ### Group number: 5
-### Student name: Alina Ahmad
+### Student name: Tochukwu Iroakazi
 ### Week: Mar 14th - Mar 18th
 ___
 1. **How many hours did you spend on the project this week? (0-10)**
