@@ -21,6 +21,7 @@ GPIO.setup(18,GPIO.OUT)
 
 pin = GPIO.PWM(18,2000)
 sense = SenseHat()
+toggle = 0
 #pin.start(4)
 
 #GPIO.output(18, True)
@@ -102,7 +103,7 @@ class StreamingOutput(object):
                 self.condition.notify_all()
             self.buffer.seek(0)
         return self.buffer.write(buf)
-
+#************************************Handler for the live feed page************************************************************
 class StreamingHandler(server.BaseHTTPRequestHandler):
     def do_HEAD(self):
         """ do_HEAD() can be tested use curl command 
@@ -111,21 +112,23 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-type', 'index/html')
         self.end_headers()
-        
+#************************************Redirect to the live feed page************************************************************
     def _redirect(self, path):
         try:
             self.send_response(303)
-            self.send_header('Content-type', 'index/html')
+            #self.send_header('Content-type', 'index/html')
             self.send_header('Location', path)
             self.end_headers()
         except:
             print('')#catch the dissconnected
-        
+#************************************Receive the page data when there is a change or action************************************************************    
     def do_GET(self):
+        #load the http page if the address and with
         if self.path == '/':
             self.send_response(301)
             self.send_header('Location', '/index.html')
             self.end_headers()
+        #load the http page if the address and with '/index.html'
         elif self.path == '/index.html':
             content = PAGE.encode('utf-8')
             self.send_response(200)
@@ -153,20 +156,20 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
             except Exception as e:
                 logging.warning(
                     'Removed streaming client %s: %s',
-                    self.client_address, str(e))
-        elif self.path=='/on':
-            
+                    self.client_address, str(e)) 
+        elif self.path=='/on':       
             pin.start(18)
             #GPIO.output(18, GPIO.HIGH)
             status='SOS is On'
             sense.show_message("SOS is on", text_colour=(255,255,255), back_colour=(255, 0, 0)) #white text color and red color back color
             print('on')
+            
+                
         elif self.path=='/off':
             #GPIO.output(18, GPIO.LOW)
             pin.stop()
             status='SOS is Off'
             print('off')
-            
         else:
             self.send_error(404)
             self.end_headers()
