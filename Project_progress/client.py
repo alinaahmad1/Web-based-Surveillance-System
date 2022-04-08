@@ -45,7 +45,7 @@ Previous_State = 0
 #****************************************Pir and Camera parameters*****************************************************
 pir = MotionSensor(4)
 camera = PiCamera(resolution='640x480', framerate=24)
-
+#camera.rotation = 180
 
 def capture_image():
     data= time.strftime("%d_%b_%Y|%H:%M:%S")
@@ -64,10 +64,13 @@ class StreamingServer(socketserver.ThreadingMixIn, server.HTTPServer):
 
 def livefeed(threadname, camera):
 #**************************Main operation of the Live Feed*************************************************************
-    address = ('', 8000) #initialize the local address with the ip address and port
-    server = StreamingServer(address, StreamingHandler) #initialize the server object
-    print("%s is running" % threadname)
-    server.serve_forever() #start the server display and keep running
+    try:
+        address = ('', 8000) #initialize the local address with the ip address and port
+        server = StreamingServer(address, StreamingHandler) #initialize the server object
+        print("%s is running" % threadname)
+        server.serve_forever() #start the server display and keep running
+    except:
+        print('disconnected')
     
 def detector(threadname, camera):
 #**************************Main Loop of Motion Detector**************************************************************
