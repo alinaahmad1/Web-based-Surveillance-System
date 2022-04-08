@@ -19,7 +19,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 GPIO.setup(18,GPIO.OUT)
 
-pin = GPIO.PWM(18,1000)
+pin = GPIO.PWM(18,2000)
 sense = SenseHat()
 #pin.start(4)
 
@@ -27,7 +27,7 @@ sense = SenseHat()
 #time.sleep(5)
 #print('led on')
         
-        
+#HTML page    
 PAGE="""\
 <!DOCTYPE html>
 <html>
@@ -113,10 +113,13 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
         self.end_headers()
         
     def _redirect(self, path):
-        self.send_response(303)
-        self.send_header('Content-type', 'index/html')
-        self.send_header('Location', path)
-        self.end_headers()
+        try:
+            self.send_response(303)
+            self.send_header('Content-type', 'index/html')
+            self.send_header('Location', path)
+            self.end_headers()
+        except:
+            print('')#catch the dissconnected
         
     def do_GET(self):
         if self.path == '/':
@@ -156,8 +159,7 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
             pin.start(18)
             #GPIO.output(18, GPIO.HIGH)
             status='SOS is On'
-            sense.show_message("SOS is on", text_colour=(255,255,255), back_colour=(255, 0, 0))
-            
+            sense.show_message("SOS is on", text_colour=(255,255,255), back_colour=(255, 0, 0)) #white text color and red color back color
             print('on')
         elif self.path=='/off':
             #GPIO.output(18, GPIO.LOW)
@@ -168,6 +170,7 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
         else:
             self.send_error(404)
             self.end_headers()
+            
         self._redirect('/')
         
 output = StreamingOutput() #had to leave this here to aviod an "output" error
