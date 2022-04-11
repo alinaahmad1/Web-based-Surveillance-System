@@ -1,4 +1,0 @@
-Responsible for collecting data from clients and storing it in local database.
-Also, send images to Firebase in order to alert the owner.
-The Firebase will allow the user to go to a Web Application where they can see image and take actions. 
-
