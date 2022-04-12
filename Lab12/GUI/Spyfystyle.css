@@ -1,3 +1,4 @@
+/* this page handles the style for the SpyFy.html and Spyfyimages.html page */
 * {
     font-family: "Helvetica Neue", Helvetica;
     background-color: rgb(217, 217,217);
@@ -63,6 +64,4 @@ a {
 .button:active {
     background-color: grey;
 }
-#offbtn{
-    visibility:hidden;
-}
+
