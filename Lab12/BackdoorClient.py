@@ -17,12 +17,8 @@ import datetime
 import logging
 import sys 
 
-#import RPi.GPIO as GPIO
-#import subprocess
 import time
-#import requests
 from picamera import PiCamera
-import picamera.array
 import schedule
 
 
