@@ -1,4 +1,20 @@
-
+''' This code is designed to make one of our RPi act as a Central
+server. The project has one server and two clients. This code is
+responsible for the following tasks:
+1) Recieve sensor data and images from the two clients
+2) Successfully putting the collect data from clients into
+    SQL database and also sending Images to the Firebase Real-
+    Time Database.
+3) After motion has been sensed at either the front door or back
+    door the camera will capture an image.
+4) The code also includes a Periodic loop that is even if no
+    motion is detected in an hour it will capture an image and
+    save in SQL and send to firebase.
+    
+Author: Alina Ahmad
+Student number: 101111867
+Group #: L1-G5
+'''
 #***********import all necessary libraries**********************************************
 import socket
 import datetime
