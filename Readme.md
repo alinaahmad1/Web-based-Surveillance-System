@@ -1,14 +1,14 @@
-					    **SYSC3010**
-				 Computer Systems Development Project
-				 SpyFy: Web-based Surveillance Camera
-				
-				           Group L1-G5
-				    Tochukwu Iroakazi, 101157104
-				       Alina Ahmad, 101111867
-				      Raiyan Hasan, 101125753
-				       TA: Zein Hajj-Ali
+## 					SYSC3010
+## 			  Computer Systems Development Project
+# 			  SpyFy: Web-based Surveillance Camera
+
+####                                   Group L1-G5
+#### 			      Tochukwu Iroakazi, 101157104
+####                              Alina Ahmad, 101111867
+####                             Raiyan Hasan, 101125753
+####                                TA: Zein Hajj-Ali
 				       
-                                    Date: April 12th, 2022
+#### 	                          Date: April 12th, 2022
 
 # 1. Introduction
 				
@@ -67,6 +67,7 @@ Open the SpyFy.html file with your preferred web browser between Google Chrome o
 3. Run the Server_Recieve.py on the Server and it should print ‘listening’ in the python shell.
 4. Once the server is listening, start running the FrontDoor_Client.py and BackdoorClient.py. Once motion is detected at either door, the client code will capture an image and send it over to the Server RPi. The Python Shell for Server will indicate whether an image has been saved in Database and Firebase, also an email is sent to the user. 
 5. Every captured image will be saved in the local database. This database can be viewed by opening the folder where the server code is saved. 
+6. Open the SpyFy.html file with your preferred web browser between Google Chrome or Internet Explorer (Right click on the file and select open with) to view the web app.
  
  
 # 7. Testing Components and Functions
