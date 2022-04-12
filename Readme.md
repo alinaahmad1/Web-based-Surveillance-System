@@ -1,4 +1,4 @@
-## <p align ="SYSC3010">
+## -> SYSC3010 <-
 ## Computer Systems Development Project
 # SpyFy: Web-based Surveillance Camera
 
