@@ -28,7 +28,7 @@ SpyFy is a web-based surveillance camera system that was designed by our team. T
 - 	Please Download the following modules on your Raspberry Pi in order to run the python files   provided in the Lab12 folder on GitHub repository. 
 - sudo apt update
 - sudo apt upgrade
-Install the following packages required for the system in the client Raspberry Pi’s:
+- Install the following packages required for the system in the client Raspberry Pi’s:
 - pip install threading
 - pip install gpiozero 
 - pip install signal 
@@ -38,7 +38,7 @@ Install the following packages required for the system in the client Raspberry P
 - pip install datetime
 - pip install logging
 - pip install sys
-Install the following packages required into the Server Raspberry Pi:
+- Install the following packages required into the Server Raspberry Pi:
 - pip install socket
 - pip install datetime
 - pip install pyrebase
