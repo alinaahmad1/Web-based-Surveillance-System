@@ -9,8 +9,8 @@ responsible for the following tasks:
 3) Display the live feed camera.
 4) switch on and off the buzzer and display message on the sensehat
     
-Editor: Tochukwu Iroakazi
-Student number: 101157104
+Author(s): Tochukwu Iroakazi, Alina Ahmad, Raiyan Hasan
+Student number: 101157104, 101111867,101125753
 Group #: L1-G5
 '''
 
