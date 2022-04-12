@@ -10,18 +10,6 @@
 				       
 #### Date: April 12th, 2022</div>
 
-## SYSC3010
-## Computer Systems Development Project
-# SpyFy: Web-based Surveillance Camera
-
-#### Group L1-G5
-#### Tochukwu Iroakazi, 101157104
-#### Alina Ahmad, 101111867
-#### Raiyan Hasan, 101125753
-#### TA: Zein Hajj-Ali
-				       
-#### Date: April 12th, 2022
-
 # 1. Introduction
 				
 SpyFy is a web-based surveillance camera system that was designed by our team. This surveillance camera was designed using a Raspberry Pi and PiCamera to provide small business owners or homeowners a web-based Surveillance system at a great cost. This project is easy to install and user-friendly at the same time. There will be three Raspberry Pi’s communicating in this project to monitor the area. One of the cameras will be installed at the Front Door and the other will be installed at the Back Door. The main purpose of these clients is to monitor specific areas and when motion is detected the PiCamera will capture an image and send it over to the Server RPi. The 3 Raspberry Pi’s must be connected to the same network in order to send and receive data. This product is useful for almost everyone living in a home, or for small business owners who would like to have a small security system for safety measures. Having a security system nowadays is extremely vital, as the crime rates and home invasions in neighborhoods continue to rise, installing a security system is the best way to prevent something unfortunate from happening. 
