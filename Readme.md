@@ -8,7 +8,7 @@
 				      Raiyan Hasan, 101125753
 				       TA: Zein Hajj-Ali
 				       
-                                     Date: April 12th, 2022
+                                    Date: April 12th, 2022
 
 # 1. Introduction
 				
