@@ -1,6 +1,6 @@
 '''
 The following code is for the frontdoor of of our project. It is designed to take images upon detecting motion and sending it to the server.
-
+Author(s): Raiyan, Tochukwu
 '''
 
 from livefeed_client import *
