@@ -1,11 +1,22 @@
 # Web streaming example
 # Source code from the official PiCamera package
 # http://picamera.readthedocs.io/en/latest/recipes2.html#web-streaming
+''' This code is designed to act as a class package for  
+each client Rpi.This code is
+responsible for the following tasks:
+1) Creating the HTML page for the web app.
+2) Listen for commands from the web app (SOS).
+3) Display the live feed camera.
+4) switch on and off the buzzer and display message on the sensehat
+    
+Editor: Tochukwu Iroakazi
+Student number: 101157104
+Group #: L1-G5
+'''
 
 import RPi.GPIO as GPIO
 import io
 import os
-#import picamera
 import logging
 import socketserver
 from threading import Condition
@@ -22,11 +33,7 @@ GPIO.setup(18,GPIO.OUT)
 pin = GPIO.PWM(18,2000)
 sense = SenseHat()
 toggle = 0
-#pin.start(4)
 
-#GPIO.output(18, True)
-#time.sleep(5)
-#print('led on')
        
 #HTML page    
 PAGE="""\
