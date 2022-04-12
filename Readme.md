@@ -1,4 +1,4 @@
-## 					-> SYSC3010 <-
+## 					<center> SYSC3010 </center>
 ## 			  Computer Systems Development Project
 # 			  SpyFy: Web-based Surveillance Camera
 
