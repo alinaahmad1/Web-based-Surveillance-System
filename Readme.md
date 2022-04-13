@@ -1,4 +1,5 @@
-<div align="center"> SYSC3010
+<div align="center"> 
+##SYSC3010
 ## Computer Systems Development Project
 # SpyFy: Web-based Surveillance Camera
 
@@ -7,7 +8,7 @@
 #### Alina Ahmad, 101111867
 #### Raiyan Hasan, 101125753
 #### TA: Zein Hajj-Ali				       
-#### Date: April 12th, 2022</div>
+#### Date: April 12th, 2022 </div>
 
 # 1. Introduction
 				
