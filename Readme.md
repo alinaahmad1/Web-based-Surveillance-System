@@ -8,7 +8,6 @@
 ##### TA: Zein Hajj-Ali				       
 ##### Date: April 12th, 2022
 
-_
 
 # 1. Introduction
 				
@@ -54,7 +53,6 @@ SpyFy is a web-based surveillance camera system that was designed by our team. T
 - Spyfyimages.html: Open up the file on Notepad or Sublime Text and add the details of your firebase network on line 36. You can get this information from firebase > project settings. 
 Open the SpyFy.html file with your preferred web browser between Google Chrome or Internet Explorer.
  
-
 # 5. Connecting Hardware:
 1. Connect the PiCamera on the Raspberry Pi for both doors: 
 2. Get a Pin header installed on the SenseHat to use it as a display for this project and connect the SenseHat to the RPi’s. 
