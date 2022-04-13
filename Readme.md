@@ -7,7 +7,8 @@
 	#### Alina Ahmad, 101111867
 	#### Raiyan Hasan, 101125753
 	#### TA: Zein Hajj-Ali				       
-	#### Date: April 12th, 2022 </p>
+	#### Date: April 12th, 2022 
+</p>
 
 # 1. Introduction
 				
